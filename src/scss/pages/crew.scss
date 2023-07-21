@@ -1,0 +1,79 @@
+.crew {
+    background-image: url('/public/images/crew/background-crew-mobile.jpg');
+
+    @media (min-width: 35em) {
+        background-position: center center;
+        background-image: url('/public/images/crew/background-crew-tablet.jpg');
+    }
+    @media (min-width: 45em) {
+        background-image: url('/public/images/crew/background-crew-desktop.jpg');
+    }
+}
+.grid-container {
+  &--crew {
+    --flow-space: 2.5rem;
+    grid-template-areas:
+      "title"
+      "image"
+      "dots"
+      "content";
+
+    & > .numbered-title {
+      grid-area: title;
+    }
+
+    & > .crew-details {
+      grid-area: content;
+
+      & > header > h2 {
+        color: hsl(var(--mainWhite) / 0.5);
+        margin-bottom: 0.5em;
+      }
+    }
+
+    & > .primary-dots {
+      grid-area: dots;
+    }
+
+    & > picture {
+      grid-area: image;
+      width: 60%;
+      border-bottom: 1px solid hsl(var(--mainWhite) / 0.1);
+    }
+
+
+    @media (min-width: 35em) {
+      padding-bottom: 0;
+      grid-template-areas:
+        "title"
+        "content"
+        "dots"
+        "image";
+
+      & .numbered-title {
+        justify-self: start;
+        margin-top: 2rem;
+      }
+    }
+
+    @media (min-width: 45em) {
+      grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(1rem, 1fr);
+      grid-template-areas:
+        ". title title ."
+        ". content image ."
+        ". dots image .";
+        justify-items: start;
+        & > .primary-dots,
+        & > .crew-details {
+            justify-self: start;
+        }
+
+      & > picture {
+        grid-column: span 2;
+        max-width: 100%;
+        width: 100%;
+        align-self: end;
+      }
+    }
+  }
+}

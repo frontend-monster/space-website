@@ -1,0 +1,17 @@
+// Fonts
+@mixin fontFace($font) {
+    @font-face {
+        font-family: "#{$font}";
+        src: url('../../public/font/#{$font}.woff2') format('woff2'),
+             url('../../public/font/#{$font}.woff') format('woff'),
+             url('../../public/font/#{$font}.ttf') format('truetype');
+        font-display: swap;
+    }
+}
+
+// Media Query
+@mixin media($min, $max, $type: screen) {
+    @media #{$type} and (min-width: $min + px) and (max-width: $max - 1 + px) {
+        @content;
+    }
+}

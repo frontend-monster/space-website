@@ -1,0 +1,25 @@
+.grid-container {
+  &--home {
+    @media (min-width: 45em) {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
+    }
+  }
+}
+
+body {
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.home {
+    background-image: url('/public/images/home/background-home-mobile.jpg');
+
+    @media (min-width: 35em) {
+        background-position: center center;
+        background-image: url('/public/images/home/background-home-tablet.jpg');
+    }
+    @media (min-width: 45em) {
+        background-image: url('/public/images/home/background-home-desktop.jpg');
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "2---withthecourse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:dev": "sass --watch --embed-source-map src/scss/style.scss:public/css/style.css",
+    "sass:prod": "sass --no-source-map --style compressed src/scss/style.scss:public/styles/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+}
